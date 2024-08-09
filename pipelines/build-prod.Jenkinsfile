@@ -8,8 +8,8 @@ pipeline {
     }
 
     options {
-        timeout(time: 10, unit: 'MINUTES')  // discard the build after 10 minutes of running
-        timestamps()  // display timestamp in console output
+        timeout(time: 10, unit: 'MINUTES')
+        timestamps()
     }
 
     environment {
@@ -17,8 +17,8 @@ pipeline {
         IMAGE_BASE_NAME = "netflix-movie-catalog-prod"
 
         DOCKER_CREDS = credentials('dockerhub')
-        DOCKER_USERNAME = "${DOCKER_CREDS_USR}"  // The _USR suffix added to access the username value
-        DOCKER_PASS = "${DOCKER_CREDS_PSW}"      // The _PSW suffix added to access the password value
+        DOCKER_USERNAME = "${DOCKER_CREDS_USR}"
+        DOCKER_PASS = "${DOCKER_CREDS_PSW}"
     }
 
     stages {
